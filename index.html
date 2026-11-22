@@ -714,13 +714,15 @@
     width: 100%;
     box-sizing: border-box;
   }
-  .aeo-badge {
+  .aeo-badge, #aeo-badge {
     font-size: 0.75rem;
     font-weight: 800;
-    color: var(--accent, #1e00ff);
+    color: #839bc8 !important;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 10px;
+    text-align: center;
+    display: block;
   }
   .aeo-title {
     font-size: 1.4rem;
@@ -923,13 +925,15 @@ footer > div:first-child {
     width: 100%;
     box-sizing: border-box;
   }
-  .aeo-badge {
+  .aeo-badge, #aeo-badge {
     font-size: 0.75rem;
     font-weight: 800;
-    color: var(--accent, #1e00ff);
+    color: #839bc8 !important;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 10px;
+    text-align: center;
+    display: block;
   }
   .aeo-title {
     font-size: 1.4rem;
@@ -1141,7 +1145,7 @@ jobs:
 <div class="findings-grid" id="findingsGrid"></div>
 
     <section class="aeo-section">
-      <div class="aeo-badge">STANDARD DI SICUREZZA DIFENSIVA PER PIPELINE</div>
+      <div class="aeo-badge" id="aeo-badge">STANDARD DI SICUREZZA DIFENSIVA PER PIPELINE</div>
       <h2 class="aeo-title">Cos'è l'Avvelenamento di Pipeline e l'Esfiltrazione di Segreti in CI/CD?</h2>
       <div class="aeo-content">
         <p>La vulnerabilità di avvelenamento e fuga di segreti nei processi CI/CD si verifica quando un attaccante compromette i flussi di integrazione continua mediante dipendenze malevole, pull request non attendibili o script malevoli nei runner di build. Operando con permessi elevati, i flussi compromessi espongono immediatamente credenziali cloud, token API e chiavi crittografiche di firma.</p>
