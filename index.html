@@ -964,7 +964,7 @@
 <header class="tavardt-header">
 <div class="tavardt-header-inner">
 <a class="tavardt-brand" href="https://ag.tavardt.com/it/" rel="noopener" target="_blank">
-<span class="tavardt-logo-text">TAVARDT<span class="tavardt-brand-dot">.</span></span>
+<span class="tavardt-logo-text">TAVARDT</span>
 </a>
 <nav class="tavardt-nav">
 <a class="tavardt-nav-link" href="https://ag.tavardt.com/it/" rel="noopener" target="_blank">Portale</a>
@@ -980,9 +980,9 @@
 <div class="cli-card">
 <div class="cli-header">
 <div class="cli-dots">
-<span class="dot red"></span>
-<span class="dot yellow"></span>
-<span class="dot green"></span>
+
+
+
 <span class="cli-title">Test nel Terminale Locale CLI</span>
 </div>
 <button class="btn-copy" id="btn-copy-cli" onclick="copyCliCommand()" type="button">Copia</button>
@@ -1078,9 +1078,6 @@ python audit_ci_cd_security.py .github/workflows/</div>
 <ul class="comp-list">
 <li><span class="cross">✖</span> Trigger pull_request_target con checkout di commit non fidati da fork.</li>
 <li><span class="cross">✖</span> Permessi globali write-all concessi al token predefinito del workflow.</li>
-
-
-
 </ul>
 </div>
 <div class="comp-col hard">
@@ -1088,9 +1085,6 @@ python audit_ci_cd_security.py .github/workflows/</div>
 <ul class="comp-list">
 <li><span class="check">✔</span> Trigger pull_request standard con zero accesso ai secret di produzione.</li>
 <li><span class="check">✔</span> Dichiarazione permissions: contents: read al vertice con privilegi minimi per job.</li>
-
-
-
 </ul>
 </div>
 </div>
@@ -1098,21 +1092,7 @@ python audit_ci_cd_security.py .github/workflows/</div>
 </section>
 <section class="faq-section">
 <h2 class="faq-title">Domande Frequenti sulla Sicurezza CI/CD &amp; Supply Chain</h2>
-<div class="faq-list">
-<div class="faq-item">
-<button class="faq-btn" onclick="toggleFaq(this)" type="button">
-<span>Why is the pull_request_target trigger considered a critical risk in GitHub Actions?</span>
-<span class="faq-icon">+</span>
-</button>
-<div class="faq-body">
-            Il trigger pull_request_target viene eseguito con i permessi di scrittura del repository di destinazione e accesso completo ai secret. Se esegue il checkout di codice da fork senza validazione, utenti esterni possono eseguire script bash ed esfiltrare credenziali.
-          </div>
-</div>
-
-
-
-
-</div>
+<div class="faq-list"><div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)" type="button">Perché il trigger pull_request_target è considerato un rischio critico in GitHub Actions?<span class="faq-icon">+</span></button><div class="faq-body">Il trigger pull_request_target viene eseguito nel contesto del repository principale con privilegi di scrittura e accesso completo ai secret aziendali. Se il workflow esegue il checkout del commit del fork non fidato senza isolamento, aggressori esterni possono iniettare comandi malevoli ed esfiltrare credenziali di produzione.</div></div><div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)" type="button">Qual è il rischio di sicurezza nell'utilizzare tag mutabili (come @v3 o @main) nelle action di terze parti?<span class="faq-icon">+</span></button><div class="faq-body">I tag Git sono puntatori mutabili che possono essere riassegnati a commit compromessi senza preavviso. Se l'account o il repository dello sviluppatore viene violato, l'attaccante può alterare il tag per distribuire codice dannoso. La difesa rigorosa impone il pinning tramite commit SHA immutabile a 40 caratteri.</div></div><div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)" type="button">Qual è il principio del minimo privilegio applicato ai token di automazione (GITHUB_TOKEN)?<span class="faq-icon">+</span></button><div class="faq-body">Storicamente, il token predefinito ereditava permessi globali di scrittura (write-all). Il principio del minimo privilegio richiede di dichiarare permissions: contents: read al livello radice del workflow, concedendo permessi di scrittura solo ai job che rilasciano esplicitamente pacchetti o release.</div></div><div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)" type="button">Come prevenire l'iniezione di comandi nei blocchi run: di GitHub Actions?<span class="faq-icon">+</span></button><div class="faq-body">Non interpolare mai espressioni di contesto GitHub (${ github.event.pull_request.title }) direttamente nel corpo degli script shell. Assegna invece il valore a variabili d'ambiente (env:) e consumalo come normale variabile shell ($PR_TITLE), neutralizzando qualsiasi delimitatore di comando.</div></div><div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)" type="button">Come verificare la sicurezza delle pipeline CI/CD in modo deterministico?<span class="faq-icon">+</span></button><div class="faq-body">Esegui l'utilità ufficiale audit_ci_cd_security.py direttamente nel terminale o runner di CI/CD. Esegue analisi statica deterministica sui file YAML, controllando permessi, pinning delle action e sanitizzazione delle variabili senza connessioni esterne.</div></div></div>
 </section>
 <div class="cta-card">
 <h3>Hai bisogno di un Hardening Professionale delle tue Pipeline CI/CD &amp; Supply Chain?</h3>
@@ -1126,7 +1106,7 @@ python audit_ci_cd_security.py .github/workflows/</div>
 <footer class="tavardt-footer">
 <div class="tavardt-footer-inner">
 <div class="tavardt-footer-col">
-<div class="tavardt-footer-logo">TAVARDT<span class="tavardt-brand-dot">.</span></div>
+<div class="tavardt-footer-logo">TAVARDT</div>
 <p class="tavardt-footer-mission">Trasformare le operazioni aziendali invisibili in leader digitali riconosciuti e sicuri.</p>
 </div>
 <div class="tavardt-footer-col">
