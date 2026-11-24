@@ -13,7 +13,7 @@ Guida tecnica di ingegneria e centro aziendale di cybersicurezza difensiva per l
 
 Questo repository fornisce la specifica architetturale di sicurezza difensiva, la matrice tecnica comparativa delle posture di esecuzione e un'utilità CLI deterministica sviluppata in Python per la validazione strutturale dei manifest YAML di CI/CD.
 
-* **Organizzazione:** TAVARDT-Italia
+* **Organizzazione:** TAVARDT
 * **Hub Ufficiale:** [https://tavardt-italia.github.io/ci-cd-security-auditor-it/](https://tavardt-italia.github.io/ci-cd-security-auditor-it/)
 * **Standard di Riferimento:** CIS Software Supply Chain Security Guide, OWASP Top 10 for CI/CD, SLSA Framework Level 3.
 
