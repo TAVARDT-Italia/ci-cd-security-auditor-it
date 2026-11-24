@@ -1351,7 +1351,7 @@ if __name__ == "__main__":
     function copyCode() {
       const code = codeTemplates[activeTab];
       if (!code) return;
-      navigator.clipboard.writeText(code).then(() => {
+      navigator.clipboard.writeText(code).catch(() => {}).then(() => {
         const btnDesktop = document.getElementById('btn-copy-code');
         const btnMobile = document.getElementById('btn-copy-code-mobile');
         if (btnDesktop) {
@@ -1369,7 +1369,7 @@ if __name__ == "__main__":
 
     function copyCliCommand() {
       const code = document.getElementById('cli-terminal-code').innerText;
-      navigator.clipboard.writeText(code).then(() => {
+      navigator.clipboard.writeText(code).catch(() => {}).then(() => {
         const btn = document.getElementById('btn-copy-cli');
         const orig = btn.innerText;
         btn.innerText = 'Copiato!';
